@@ -22,8 +22,18 @@ public class Boutique {
      */
     public static void main(String[] args) {
         
-        miFichero = new Fichero
-        // TODO code application logic here
+        miFichero = new Fichero ("boutique.xml");
+        misPrendas = (ListaPrendas) miFichero.leer();
+        if (misPrendas == null){
+            misPrendas = new ListaPrendas();
+            
+        }
+        
+        MenuPrincipal m = new MenuPrincipal();
+        m.setLocationRelativeTo(null);
+        m.setVisible(true);
+        
+        
     }
     
 }
