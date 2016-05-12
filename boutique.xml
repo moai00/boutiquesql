@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_73" class="java.beans.XMLDecoder">
+ <object class="boutique.ListaPrendas" id="ListaPrendas0">
+  <void property="lista">
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>34</string>
+     </void>
+     <void property="color">
+      <string>Amarillo</string>
+     </void>
+     <void property="descripcion">
+      <string>falda</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>20.0</double>
+     </void>
+     <void property="talla">
+      <string>XS</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>333</string>
+     </void>
+     <void property="color">
+      <string>Blanco</string>
+     </void>
+     <void property="descripcion">
+      <string>camisa</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>20.0</double>
+     </void>
+     <void property="stock">
+      <int>21</int>
+     </void>
+     <void property="talla">
+      <string>S</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
