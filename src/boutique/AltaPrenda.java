@@ -208,7 +208,7 @@ public class AltaPrenda extends javax.swing.JFrame {
         } else if (p.getTalla().isEmpty() || jComboBox2.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Debes escoger una talla", "Talla vacía", JOptionPane.ERROR_MESSAGE);
         } else if (p.getPreciocoste() <= 0 || p.getPrecioventa() <= 0) {
-            JOptionPane.showMessageDialog(this, "El precio de coste no puede ser menor o igual a 0", "Precios erroneos", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Los precios no pueden ser menor o igual a 0", "Precios erroneos", JOptionPane.ERROR_MESSAGE);
         } else if (p.getStock() < 0) {
             JOptionPane.showMessageDialog(this, "No puede haber stock negativo", "Stock erroneo", JOptionPane.ERROR_MESSAGE);
         } else if (Boutique.misPrendas.existe(p)){
@@ -217,6 +217,12 @@ public class AltaPrenda extends javax.swing.JFrame {
             Boutique.misPrendas.altaPrenda(p);
             Boutique.miFichero.grabar(Boutique.misPrendas);
             JOptionPane.showMessageDialog(this, "Prenda dada de alta");
+            
+            
+            
+            //consultar: sin el dispose si intentamos poner otra prenda
+            //salta el error de prenda duplicada
+            dispose();
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed

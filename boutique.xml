@@ -96,6 +96,81 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>37</string>
+     </void>
+     <void property="color">
+      <string>Amarillo</string>
+     </void>
+     <void property="descripcion">
+      <string>falda</string>
+     </void>
+     <void property="preciocoste">
+      <double>1.0</double>
+     </void>
+     <void property="precioventa">
+      <double>2.0</double>
+     </void>
+     <void property="stock">
+      <int>2</int>
+     </void>
+     <void property="talla">
+      <string>M</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>3221</string>
+     </void>
+     <void property="color">
+      <string>Negro</string>
+     </void>
+     <void property="descripcion">
+      <string>camisa</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>20.0</double>
+     </void>
+     <void property="stock">
+      <int>3</int>
+     </void>
+     <void property="talla">
+      <string>XL</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>111111</string>
+     </void>
+     <void property="color">
+      <string>Verde</string>
+     </void>
+     <void property="descripcion">
+      <string>chaqueta</string>
+     </void>
+     <void property="preciocoste">
+      <double>133.0</double>
+     </void>
+     <void property="precioventa">
+      <double>200.0</double>
+     </void>
+     <void property="stock">
+      <int>3</int>
+     </void>
+     <void property="talla">
+      <string>M</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
 </java>
