@@ -49,6 +49,53 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>34</string>
+     </void>
+     <void property="color">
+      <string>Rojo</string>
+     </void>
+     <void property="descripcion">
+      <string>falda</string>
+     </void>
+     <void property="preciocoste">
+      <double>12.0</double>
+     </void>
+     <void property="precioventa">
+      <double>-25.0</double>
+     </void>
+     <void property="talla">
+      <string>M</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>34</string>
+     </void>
+     <void property="color">
+      <string>Azul</string>
+     </void>
+     <void property="descripcion">
+      <string>pepe</string>
+     </void>
+     <void property="preciocoste">
+      <double>30.0</double>
+     </void>
+     <void property="precioventa">
+      <double>30.0</double>
+     </void>
+     <void property="stock">
+      <int>30</int>
+     </void>
+     <void property="talla">
+      <string>M</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
 </java>

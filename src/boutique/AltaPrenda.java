@@ -201,9 +201,23 @@ public class AltaPrenda extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        Boutique.misPrendas.altaPrenda(p);
-        Boutique.miFichero.grabar(Boutique.misPrendas);
-        JOptionPane.showMessageDialog(this, "Prenda dada de alta");
+        if (p.getCodigo().isEmpty() || p.getDescripcion().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Hay campos en blanco", "Campos Vacíos", JOptionPane.ERROR_MESSAGE);
+        } else if (p.getColor().isEmpty() || jComboBox1.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Debes escoger un color", "Color vacío", JOptionPane.ERROR_MESSAGE);
+        } else if (p.getTalla().isEmpty() || jComboBox2.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(this, "Debes escoger una talla", "Talla vacía", JOptionPane.ERROR_MESSAGE);
+        } else if (p.getPreciocoste() <= 0 || p.getPrecioventa() <= 0) {
+            JOptionPane.showMessageDialog(this, "El precio de coste no puede ser menor o igual a 0", "Precios erroneos", JOptionPane.ERROR_MESSAGE);
+        } else if (p.getStock() < 0) {
+            JOptionPane.showMessageDialog(this, "No puede haber stock negativo", "Stock erroneo", JOptionPane.ERROR_MESSAGE);
+        } else if (Boutique.misPrendas.existe(p)){
+            JOptionPane.showMessageDialog(this, "Ya existe una prenda con ese codigo", "Código Duplicado", JOptionPane.ERROR_MESSAGE);
+        } else {
+            Boutique.misPrendas.altaPrenda(p);
+            Boutique.miFichero.grabar(Boutique.misPrendas);
+            JOptionPane.showMessageDialog(this, "Prenda dada de alta");
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
