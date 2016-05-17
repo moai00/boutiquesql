@@ -37,6 +37,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Boutique La Francesita");
 
         jButton1.setText("Alta Prenda");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

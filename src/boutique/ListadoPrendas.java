@@ -45,6 +45,7 @@ public class ListadoPrendas extends javax.swing.JDialog {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Listado de Prendas");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

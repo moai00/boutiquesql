@@ -52,6 +52,7 @@ public class SeleccionarColor extends javax.swing.JDialog {
         jComboBox1 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Selecciona el color");
 
         jButton1.setText("Escoger");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
