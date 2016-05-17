@@ -7,29 +7,33 @@ package boutique;
 
 /**
  *
- * @author moai
+ * @author usu21
  */
-public class ListadoPrendas extends javax.swing.JDialog {
+public class PrendasColor extends javax.swing.JDialog {
     
-      private ListaPrendas todos;
+        private ListaPrendas prendasCol;
 
-    public ListaPrendas getTodos() {
-        return todos;
+    public ListaPrendas getPrendasCol() {
+        return prendasCol;
     }
 
-    public void setTodos(ListaPrendas todos) {
-        this.todos = todos;
+    public void setPrendasCol(ListaPrendas prendasCol) {
+        this.prendasCol = prendasCol;
     }
 
 
     /**
-     * Creates new form ListadoPrendas
+     * Creates new form PrendasColor
      */
-    public ListadoPrendas(java.awt.Frame parent, boolean modal) {
+    public PrendasColor(java.awt.Frame parent, boolean modal, String color) {
         super(parent, modal);
         
-        todos = Boutique.misPrendas;
+        prendasCol = Boutique.misPrendas.prendasPorColor(color);
+        
+        
+        
         initComponents();
+        this.setTitle("Prendas de color " + color);
     }
 
     /**
@@ -59,19 +63,13 @@ public class ListadoPrendas extends javax.swing.JDialog {
             }
         ));
 
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${todos.lista}");
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${prendasCol.lista}");
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigo}"));
         columnBinding.setColumnName("Codigo");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
         columnBinding.setColumnName("Descripcion");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${color}"));
-        columnBinding.setColumnName("Color");
-        columnBinding.setColumnClass(String.class);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${talla}"));
-        columnBinding.setColumnName("Talla");
         columnBinding.setColumnClass(String.class);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${preciocoste}"));
         columnBinding.setColumnName("Preciocoste");
@@ -82,6 +80,9 @@ public class ListadoPrendas extends javax.swing.JDialog {
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stock}"));
         columnBinding.setColumnName("Stock");
         columnBinding.setColumnClass(Integer.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${talla}"));
+        columnBinding.setColumnName("Talla");
+        columnBinding.setColumnClass(String.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         jScrollPane1.setViewportView(jTable1);
@@ -92,15 +93,15 @@ public class ListadoPrendas extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-                .addGap(22, 22, 22))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
         );
 
         bindingGroup.bind();

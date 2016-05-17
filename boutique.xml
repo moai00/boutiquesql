@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_73" class="java.beans.XMLDecoder">
+<java version="1.7.0_80" class="java.beans.XMLDecoder">
  <object class="boutique.ListaPrendas" id="ListaPrendas0">
   <void property="lista">
    <void method="add">
     <object class="boutique.Prendas">
      <void property="codigo">
-      <string>34</string>
+      <string>1</string>
      </void>
      <void property="color">
-      <string>Amarillo</string>
+      <string>Negro</string>
      </void>
      <void property="descripcion">
       <string>falda</string>
@@ -17,7 +17,7 @@
       <double>10.0</double>
      </void>
      <void property="precioventa">
-      <double>20.0</double>
+      <double>200.0</double>
      </void>
      <void property="talla">
       <string>XS</string>
@@ -27,147 +27,50 @@
    <void method="add">
     <object class="boutique.Prendas">
      <void property="codigo">
-      <string>333</string>
-     </void>
-     <void property="color">
-      <string>Blanco</string>
-     </void>
-     <void property="descripcion">
-      <string>camisa</string>
-     </void>
-     <void property="preciocoste">
-      <double>10.0</double>
-     </void>
-     <void property="precioventa">
-      <double>20.0</double>
-     </void>
-     <void property="stock">
-      <int>21</int>
-     </void>
-     <void property="talla">
-      <string>S</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>34</string>
-     </void>
-     <void property="color">
-      <string>Rojo</string>
-     </void>
-     <void property="descripcion">
-      <string>falda</string>
-     </void>
-     <void property="preciocoste">
-      <double>12.0</double>
-     </void>
-     <void property="precioventa">
-      <double>-25.0</double>
-     </void>
-     <void property="talla">
-      <string>M</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>34</string>
-     </void>
-     <void property="color">
-      <string>Azul</string>
-     </void>
-     <void property="descripcion">
-      <string>pepe</string>
-     </void>
-     <void property="preciocoste">
-      <double>30.0</double>
-     </void>
-     <void property="precioventa">
-      <double>30.0</double>
-     </void>
-     <void property="stock">
-      <int>30</int>
-     </void>
-     <void property="talla">
-      <string>M</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>37</string>
-     </void>
-     <void property="color">
-      <string>Amarillo</string>
-     </void>
-     <void property="descripcion">
-      <string>falda</string>
-     </void>
-     <void property="preciocoste">
-      <double>1.0</double>
-     </void>
-     <void property="precioventa">
-      <double>2.0</double>
-     </void>
-     <void property="stock">
-      <int>2</int>
-     </void>
-     <void property="talla">
-      <string>M</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>3221</string>
-     </void>
-     <void property="color">
-      <string>Negro</string>
-     </void>
-     <void property="descripcion">
-      <string>camisa</string>
-     </void>
-     <void property="preciocoste">
-      <double>10.0</double>
-     </void>
-     <void property="precioventa">
-      <double>20.0</double>
-     </void>
-     <void property="stock">
-      <int>3</int>
-     </void>
-     <void property="talla">
-      <string>XL</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>111111</string>
+      <string>2</string>
      </void>
      <void property="color">
       <string>Verde</string>
      </void>
      <void property="descripcion">
-      <string>chaqueta</string>
+      <string>pantalon</string>
      </void>
      <void property="preciocoste">
-      <double>133.0</double>
+      <double>10.0</double>
      </void>
      <void property="precioventa">
-      <double>200.0</double>
+      <double>25.0</double>
      </void>
      <void property="stock">
-      <int>3</int>
+      <int>2</int>
      </void>
      <void property="talla">
-      <string>M</string>
+      <string>L</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>3</string>
+     </void>
+     <void property="color">
+      <string>Rojo</string>
+     </void>
+     <void property="descripcion">
+      <string>camisa</string>
+     </void>
+     <void property="preciocoste">
+      <double>5.0</double>
+     </void>
+     <void property="precioventa">
+      <double>10.0</double>
+     </void>
+     <void property="stock">
+      <int>100</int>
+     </void>
+     <void property="talla">
+      <string>L</string>
      </void>
     </object>
    </void>
