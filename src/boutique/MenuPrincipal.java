@@ -46,7 +46,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Listado Prenda");
+        jButton2.setText("Listado Prendas");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -54,6 +54,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         jButton3.setText("Añadir Stock a Prenda");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Total precio stock ");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +126,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         AltaPrenda ap = new AltaPrenda(this, true);
         ap.setLocationRelativeTo(null);
         ap.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -132,18 +137,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         SeleccionarColor sc = new SeleccionarColor(this, true);
-        
+
         sc.setLocationRelativeTo(null);
         sc.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-JOptionPane.showMessageDialog(this, "En total hay " + Boutique.misPrendas.cantidad() + " prendas");
+        JOptionPane.showMessageDialog(this, "En total hay " + Boutique.misPrendas.cantidad() + " prendas");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-JOptionPane.showMessageDialog(this, "El valor del stock es de " + Boutique.misPrendas.valorPrendas() + " euros");        
+        JOptionPane.showMessageDialog(this, "El valor del stock es de " + Boutique.misPrendas.valorPrendas() + " euros");
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        SeleccionarPrenda sp = new SeleccionarPrenda(this, true);
+        sp.setLocationRelativeTo(null);
+        sp.setVisible(true);
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

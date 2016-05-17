@@ -51,6 +51,15 @@ public class Prendas implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return  codigo + " - " + descripcion + ", " + color + ", " + talla;
+    }
+
+    
+    
+    
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 29 * hash + Objects.hashCode(this.codigo);
