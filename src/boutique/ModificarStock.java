@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author moai
  */
 public class ModificarStock extends javax.swing.JDialog {
-    
+
     Prendas prendasPasadas;
 
     /**
@@ -22,9 +22,9 @@ public class ModificarStock extends javax.swing.JDialog {
         super(parent, modal);
         prendasPasadas = laPrenda;
         initComponents();
-        
+
         jSpinner1.setValue(prendasPasadas.getStock());
-        
+
     }
 
     /**
@@ -75,16 +75,15 @@ public class ModificarStock extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       prendasPasadas.setStock((int)jSpinner1.getValue());
-       Boutique.miFichero.grabar(Boutique.misPrendas);
-        JOptionPane.showMessageDialog(this, "Stock añadido");
+        prendasPasadas.setStock((int) jSpinner1.getValue());
+        Boutique.miFichero.grabar(Boutique.misPrendas);
+        JOptionPane.showMessageDialog(this, "Stock modificado");
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -10,8 +10,8 @@ package boutique;
  * @author moai
  */
 public class ListadoPrendas extends javax.swing.JDialog {
-    
-      private ListaPrendas todos;
+
+    private ListaPrendas todos;
 
     public ListaPrendas getTodos() {
         return todos;
@@ -21,13 +21,12 @@ public class ListadoPrendas extends javax.swing.JDialog {
         this.todos = todos;
     }
 
-
     /**
      * Creates new form ListadoPrendas
      */
     public ListadoPrendas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        
+
         todos = Boutique.misPrendas;
         initComponents();
     }
@@ -111,7 +110,6 @@ public class ListadoPrendas extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

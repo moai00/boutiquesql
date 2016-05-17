@@ -91,6 +91,9 @@
      <void property="precioventa">
       <double>222.2</double>
      </void>
+     <void property="stock">
+      <int>5</int>
+     </void>
      <void property="talla">
       <string>M</string>
      </void>
@@ -115,6 +118,31 @@
      </void>
      <void property="talla">
       <string>L</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>nuevo stock</string>
+     </void>
+     <void property="color">
+      <string>Rojo</string>
+     </void>
+     <void property="descripcion">
+      <string>corbata</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>10.0</double>
+     </void>
+     <void property="stock">
+      <int>8000</int>
+     </void>
+     <void property="talla">
+      <string>XS</string>
      </void>
     </object>
    </void>
