@@ -112,6 +112,8 @@ public class SeleccionarPrenda extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        
         if (prendaEscogida.equals(new Prendas())){
             JOptionPane.showMessageDialog(this, "Debes seleccionar una prenda", "Prenda sin seleccionar", JOptionPane.ERROR_MESSAGE);
         }else{

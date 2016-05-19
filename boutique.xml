@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_73" class="java.beans.XMLDecoder">
+<java version="1.7.0_80" class="java.beans.XMLDecoder">
  <object class="boutique.ListaPrendas" id="ListaPrendas0">
   <void property="lista">
    <void method="add">
@@ -45,7 +45,7 @@
       <double>25.0</double>
      </void>
      <void property="stock">
-      <int>6</int>
+      <int>32</int>
      </void>
      <void property="talla">
       <string>L</string>
@@ -68,6 +68,9 @@
      </void>
      <void property="precioventa">
       <double>10.0</double>
+     </void>
+     <void property="stock">
+      <int>5</int>
      </void>
      <void property="talla">
       <string>L</string>
@@ -116,6 +119,9 @@
      <void property="precioventa">
       <double>2.0</double>
      </void>
+     <void property="stock">
+      <int>10</int>
+     </void>
      <void property="talla">
       <string>L</string>
      </void>
@@ -139,7 +145,79 @@
       <double>10.0</double>
      </void>
      <void property="stock">
-      <int>8000</int>
+      <int>1</int>
+     </void>
+     <void property="talla">
+      <string>XS</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>45</string>
+     </void>
+     <void property="color">
+      <string>Gris</string>
+     </void>
+     <void property="descripcion">
+      <string>zapatos</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>12.0</double>
+     </void>
+     <void property="stock">
+      <int>100</int>
+     </void>
+     <void property="talla">
+      <string>S</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>34cint</string>
+     </void>
+     <void property="color">
+      <string>Verde</string>
+     </void>
+     <void property="descripcion">
+      <string>cinturon ancho</string>
+     </void>
+     <void property="preciocoste">
+      <double>1.0</double>
+     </void>
+     <void property="precioventa">
+      <double>2.0</double>
+     </void>
+     <void property="talla">
+      <string>S</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>4333</string>
+     </void>
+     <void property="color">
+      <string>Gris</string>
+     </void>
+     <void property="descripcion">
+      <string>blusa</string>
+     </void>
+     <void property="preciocoste">
+      <double>1.0</double>
+     </void>
+     <void property="precioventa">
+      <double>3.0</double>
+     </void>
+     <void property="stock">
+      <int>12</int>
      </void>
      <void property="talla">
       <string>XS</string>

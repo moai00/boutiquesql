@@ -52,7 +52,7 @@ public class Prendas implements Serializable {
 
     @Override
     public String toString() {
-        return  codigo + " - " + descripcion + ", " + color + ", " + talla;
+        return  codigo + " - " + descripcion + ", " + color + ", " + talla + ", stock: " + stock;
     }
 
     
