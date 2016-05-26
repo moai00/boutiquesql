@@ -91,22 +91,22 @@
           <BindingProperties>
             <BindingProperty name="elements" source="Form" sourcePath="${prendasCol.lista}" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
               <Subbinding sourcePath="${codigo}">
-                <BindingParameter name="NAME" value="Title 1"/>
+                <BindingParameter name="NAME" value="C&#xf3;digo"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${descripcion}">
-                <BindingParameter name="NAME" value="Title 2"/>
+                <BindingParameter name="NAME" value="Descripci&#xf3;n"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${preciocoste}">
-                <BindingParameter name="NAME" value="Title 3"/>
+                <BindingParameter name="NAME" value="Precio de coste"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Double.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${precioventa}">
-                <BindingParameter name="NAME" value="Title 4"/>
+                <BindingParameter name="NAME" value="Precio de venta"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Double.class"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>

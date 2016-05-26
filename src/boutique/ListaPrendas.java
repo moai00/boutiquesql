@@ -78,6 +78,11 @@ public class ListaPrendas implements Serializable{
         
         return prendasColor;
     }
+    
+    
+    public void bajaPrenda (Prendas p){
+        lista.remove(p);
+    }
    
      
     

@@ -5,29 +5,40 @@
  */
 package boutique;
 
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author moai
+ * @author usu21
  */
-public class ListadoPrendas extends javax.swing.JDialog {
+public class BorrarPrenda extends javax.swing.JDialog {
 
-    private ListaPrendas todos;
+    private ListaPrendas Prendas;
+    private Prendas prendaSeleccionada;
 
-    public ListaPrendas getTodos() {
-        return todos;
+    public Prendas getPrendaSeleccionada() {
+        return prendaSeleccionada;
     }
 
-    public void setTodos(ListaPrendas todos) {
-        this.todos = todos;
+    public void setPrendaSeleccionada(Prendas prendaSeleccionada) {
+        this.prendaSeleccionada = prendaSeleccionada;
+    }
+
+    public ListaPrendas getPrendas() {
+        return Prendas;
+    }
+
+    public void setPrendas(ListaPrendas Prendas) {
+        this.Prendas = Prendas;
     }
 
     /**
-     * Creates new form ListadoPrendas
+     * Creates new form BorrarPrenda
      */
-    public ListadoPrendas(java.awt.Frame parent, boolean modal) {
+    public BorrarPrenda(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-
-        todos = Boutique.misPrendas;
+        Prendas = Boutique.misPrendas;
+        prendaSeleccionada = new Prendas();
         initComponents();
     }
 
@@ -43,30 +54,26 @@ public class ListadoPrendas extends javax.swing.JDialog {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Listado de Prendas");
 
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${todos.lista}");
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${prendas.lista}");
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigo}"));
         columnBinding.setColumnName("Código");
-        columnBinding.setColumnClass(String.class);
-        columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
-        columnBinding.setColumnName("Descripción");
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${color}"));
         columnBinding.setColumnName("Color");
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${talla}"));
-        columnBinding.setColumnName("Talla");
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
+        columnBinding.setColumnName("Descripción");
         columnBinding.setColumnClass(String.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${preciocoste}"));
-        columnBinding.setColumnName("Preciocoste");
+        columnBinding.setColumnName("Precio de coste");
         columnBinding.setColumnClass(Double.class);
         columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${precioventa}"));
@@ -77,9 +84,22 @@ public class ListadoPrendas extends javax.swing.JDialog {
         columnBinding.setColumnName("Stock");
         columnBinding.setColumnClass(Integer.class);
         columnBinding.setEditable(false);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${talla}"));
+        columnBinding.setColumnName("Talla");
+        columnBinding.setColumnClass(String.class);
+        columnBinding.setEditable(false);
         bindingGroup.addBinding(jTableBinding);
-        jTableBinding.bind();
+        jTableBinding.bind();org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${prendaSeleccionada}"), jTable1, org.jdesktop.beansbinding.BeanProperty.create("selectedElement"));
+        bindingGroup.addBinding(binding);
+
         jScrollPane1.setViewportView(jTable1);
+
+        jButton1.setText("Borrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,15 +107,19 @@ public class ListadoPrendas extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-                .addGap(22, 22, 22))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         bindingGroup.bind();
@@ -103,11 +127,28 @@ public class ListadoPrendas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (jTable1.getSelectedRow() < 0){
+            JOptionPane.showMessageDialog(rootPane,"Debes seleccionar una prenda");
+        }else{
+            int respuesta = JOptionPane.showConfirmDialog(this, "Estás seguro?", "CONFIRMA", JOptionPane.YES_NO_OPTION);
+            if (respuesta == JOptionPane.YES_OPTION){
+                Boutique.misPrendas.bajaPrenda(prendaSeleccionada);
+                Boutique.miFichero.grabar(Boutique.misPrendas);
+                JOptionPane.showMessageDialog(this, "Prenda borrada");
+                dispose();
+            }
+        
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
