@@ -30,50 +30,25 @@
    <void method="add">
     <object class="boutique.Prendas">
      <void property="codigo">
-      <string>2</string>
+      <string>123</string>
      </void>
      <void property="color">
-      <string>Verde</string>
+      <string>Amarillo</string>
      </void>
      <void property="descripcion">
-      <string>pantalon</string>
+      <string>corbata</string>
      </void>
      <void property="preciocoste">
       <double>10.0</double>
      </void>
      <void property="precioventa">
-      <double>25.0</double>
+      <double>20.0</double>
      </void>
      <void property="stock">
-      <int>32</int>
+      <int>14</int>
      </void>
      <void property="talla">
-      <string>L</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="boutique.Prendas">
-     <void property="codigo">
-      <string>3</string>
-     </void>
-     <void property="color">
-      <string>Rojo</string>
-     </void>
-     <void property="descripcion">
-      <string>camisa</string>
-     </void>
-     <void property="preciocoste">
-      <double>5.0</double>
-     </void>
-     <void property="precioventa">
-      <double>10.0</double>
-     </void>
-     <void property="stock">
-      <int>17</int>
-     </void>
-     <void property="talla">
-      <string>L</string>
+      <string>XS</string>
      </void>
     </object>
    </void>

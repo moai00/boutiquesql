@@ -33,7 +33,7 @@ public class ListaPrendas implements Serializable{
         
         
         for (Prendas p : lista){
-            total += p.getPreciocoste()* (double)p.getStock();
+            total += p.getPrecioventa()* (double)p.getStock();
         }
         
         
