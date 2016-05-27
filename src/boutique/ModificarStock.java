@@ -42,7 +42,7 @@ public class ModificarStock extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Modificar Stock");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel());
 
         jButton1.setText("Modificar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,10 +76,15 @@ public class ModificarStock extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if ((int)jSpinner1.getValue() < 0 ){
+            JOptionPane.showMessageDialog(this, "El stock no puede ser negativo", "Stock Negativo", JOptionPane.ERROR_MESSAGE);
+        }else{
+        
         prendasPasadas.setStock((int) jSpinner1.getValue());
         Boutique.miFichero.grabar(Boutique.misPrendas);
         JOptionPane.showMessageDialog(this, "Stock modificado");
         dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

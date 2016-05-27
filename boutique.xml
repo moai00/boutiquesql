@@ -44,11 +44,33 @@
      <void property="precioventa">
       <double>20.0</double>
      </void>
-     <void property="stock">
-      <int>14</int>
-     </void>
      <void property="talla">
       <string>XS</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>1234</string>
+     </void>
+     <void property="color">
+      <string>Amarillo</string>
+     </void>
+     <void property="descripcion">
+      <string>chaqueta</string>
+     </void>
+     <void property="preciocoste">
+      <double>25.0</double>
+     </void>
+     <void property="precioventa">
+      <double>35.0</double>
+     </void>
+     <void property="stock">
+      <int>100</int>
+     </void>
+     <void property="talla">
+      <string>S</string>
      </void>
     </object>
    </void>
