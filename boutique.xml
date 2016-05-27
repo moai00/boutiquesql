@@ -20,7 +20,7 @@
       <double>200.0</double>
      </void>
      <void property="stock">
-      <int>8</int>
+      <int>1</int>
      </void>
      <void property="talla">
       <string>XS</string>
@@ -66,11 +66,58 @@
      <void property="precioventa">
       <double>35.0</double>
      </void>
-     <void property="stock">
-      <int>100</int>
-     </void>
      <void property="talla">
       <string>S</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>89</string>
+     </void>
+     <void property="color">
+      <string>Verde</string>
+     </void>
+     <void property="descripcion">
+      <string>camisa hawaiana</string>
+     </void>
+     <void property="preciocoste">
+      <double>20.28</double>
+     </void>
+     <void property="precioventa">
+      <double>30.27</double>
+     </void>
+     <void property="stock">
+      <int>7</int>
+     </void>
+     <void property="talla">
+      <string>XL</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="boutique.Prendas">
+     <void property="codigo">
+      <string>78</string>
+     </void>
+     <void property="color">
+      <string>Negro</string>
+     </void>
+     <void property="descripcion">
+      <string>minifalda</string>
+     </void>
+     <void property="preciocoste">
+      <double>10.0</double>
+     </void>
+     <void property="precioventa">
+      <double>150.0</double>
+     </void>
+     <void property="stock">
+      <int>8</int>
+     </void>
+     <void property="talla">
+      <string>XS</string>
      </void>
     </object>
    </void>
