@@ -22,6 +22,56 @@ public class PrendaJDBC {
 
     private Connection conexion;
 
+    public int totalPrendas() {
+        int total = 0;
+        conectar();
+        if (conexion != null) {
+            try {
+                String query = "select count(*) from prendas";
+                Statement st = conexion.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                if (rs.next()){
+                total = rs.getInt(1);
+                }
+                rs.close();
+                st.close();
+
+            } catch (SQLException ex) {
+                System.out.println("Error en la consulta " + ex.getMessage());
+            } finally {
+                desconectar();
+            }
+        }
+
+        return total;
+    }
+    
+    public double valorTotal() {
+        double total = 0;
+        conectar();
+        if (conexion != null) {
+            try {
+                String query = "select sum(precioventa) from prendas";
+                Statement st = conexion.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                if (rs.next()){
+                total = rs.getInt(1);
+                }
+                rs.close();
+                st.close();
+
+            } catch (SQLException ex) {
+                System.out.println("Error en la consulta " + ex.getMessage());
+            } finally {
+                desconectar();
+            }
+        }
+
+        return total;
+    }
+    
+    
+
     public ListaPrendas selectAllPrendas() {
         ListaPrendas listaPrendas = new ListaPrendas();
         conectar();
@@ -40,52 +90,51 @@ public class PrendaJDBC {
                     prenda.setPrecioventa(rs.getDouble("precioventa"));
                     prenda.setStock(rs.getInt("stock"));
                     listaPrendas.altaPrenda(prenda);
-                    
 
                 }
                 rs.close();
                 st.close();
 
-            }catch (SQLException ex){
+            } catch (SQLException ex) {
                 System.out.println("Error en la consulta " + ex.getMessage());
-            }finally{
+            } finally {
                 desconectar();
             }
         }
-        
+
         return listaPrendas;
     }
-    
-    public boolean existePrenda(String codigo){
+
+    public boolean existePrenda(String codigo) {
         conectar();
-        if (conexion != null){
-            try{
+        if (conexion != null) {
+            try {
                 String query = "select * from prendas where codigo='" + codigo + "'";
                 Statement st = conexion.createStatement();
                 ResultSet rs = st.executeQuery(query);
                 boolean existe = false;
-                if (rs.next()){
+                if (rs.next()) {
                     existe = true;
                 }
                 rs.close();
                 st.close();
                 return existe;
-            
-            }catch (SQLException ex){
+
+            } catch (SQLException ex) {
                 System.out.println("Error al consultar" + ex.getMessage());
                 return false;
-            }finally{
+            } finally {
                 desconectar();
             }
-        }else{
+        } else {
             return false;
         }
     }
-    
-    public boolean insertarPrenda(Prendas prenda){
+
+    public boolean insertarPrenda(Prendas prenda) {
         conectar();
-        if (conexion != null){
-            try{
+        if (conexion != null) {
+            try {
                 String insert = "insert into prendas values (?,?,?,?,?,?,?)";
                 PreparedStatement ps = conexion.prepareStatement(insert);
                 ps.setString(1, prenda.getCodigo());
@@ -95,25 +144,21 @@ public class PrendaJDBC {
                 ps.setDouble(5, prenda.getPreciocoste());
                 ps.setDouble(6, prenda.getPrecioventa());
                 ps.setInt(7, prenda.getStock());
-                
+
                 ps.executeUpdate();
                 ps.close();
-                        return true;
-            }catch (SQLException ex){
+                return true;
+            } catch (SQLException ex) {
                 System.out.println("Error al insertar" + ex.getMessage());
                 return false;
-            }finally{
+            } finally {
                 desconectar();
             }
-        }else{
+        } else {
             return false;
         }
-        
+
     }
-       
-    
-    
-    
 
     private void conectar() {
         try {

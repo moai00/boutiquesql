@@ -5,6 +5,7 @@
  */
 package boutique;
 
+import dao.PrendaJDBC;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,16 @@ import javax.swing.JOptionPane;
  * @author usu21
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+    
+     private PrendaJDBC prendaJDBC;
 
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
+        prendaJDBC= new PrendaJDBC();
+        
+       
         initComponents();
     }
 
@@ -149,11 +155,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        JOptionPane.showMessageDialog(this, "En total hay " + Boutique.misPrendas.cantidad() + " prendas");
+        
+        
+        JOptionPane.showMessageDialog(this, "En total hay " + prendaJDBC.totalPrendas() + " prendas");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        JOptionPane.showMessageDialog(this, "El valor del stock es de " + Boutique.misPrendas.valorPrendas() + " euros");
+        JOptionPane.showMessageDialog(this, "El valor del stock es de " + prendaJDBC.valorTotal() + " euros");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
