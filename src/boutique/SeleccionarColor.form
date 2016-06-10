@@ -67,7 +67,7 @@
         </Property>
       </Properties>
       <BindingProperties>
-        <BindingProperty name="elements" source="Form" sourcePath="${color}" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="elements" source="Form" sourcePath="${colores}" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
       </BindingProperties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>

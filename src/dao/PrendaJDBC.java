@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,6 +22,9 @@ import java.sql.Statement;
 public class PrendaJDBC {
 
     private Connection conexion;
+    
+    
+    
 
     public int totalPrendas() {
         int total = 0;
@@ -45,6 +49,61 @@ public class PrendaJDBC {
 
         return total;
     }
+    
+    public ArrayList<String> colorDisponible(){
+        ArrayList<String> colores = new ArrayList<>();
+        conectar();
+        if(conexion != null){
+            try{
+                String query = "select distinct color from prendas";
+                Statement st = conexion.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                while (rs.next()){
+                    
+                    colores.add(rs.getString("color"));
+                   
+                }
+                rs.close();
+                st.close();
+                }catch (SQLException ex){
+                    System.out.println("Error en la consulta " + ex.getMessage());
+            }finally {
+                desconectar();
+            }
+        }
+        return colores;
+    }
+    
+    public ListaPrendas prendaColor(String color){
+        ListaPrendas listaPrendas = new ListaPrendas();
+        conectar();
+        if (conexion != null){
+            try {
+                String query = "select * from prendas where color='" + color + "'";
+                Statement st = conexion.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                while (rs.next()){
+                Prendas prenda = new Prendas();
+                prenda.setCodigo(rs.getString("codigo"));
+                prenda.setDescripcion(rs.getString("descripcion"));
+                prenda.setColor(rs.getString("color"));
+                prenda.setTalla(rs.getString("talla"));
+                prenda.setPreciocoste(rs.getDouble("preciocoste"));
+                prenda.setPrecioventa(rs.getDouble("precioventa"));
+                prenda.setStock(rs.getInt("stock"));
+                listaPrendas.altaPrenda(prenda);
+                }
+                rs.close();
+                st.close();
+                
+            }catch (SQLException ex){
+                System.out.println("Error en la consulta " + ex.getMessage());
+            }finally{
+                desconectar();
+            }
+        }
+       return listaPrendas; 
+    } 
     
     public double valorTotal() {
         double total = 0;

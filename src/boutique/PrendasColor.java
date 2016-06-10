@@ -5,21 +5,28 @@
  */
 package boutique;
 
+import dao.PrendaJDBC;
+
 /**
  *
  * @author usu21
  */
 public class PrendasColor extends javax.swing.JDialog {
     
-        private ListaPrendas prendasCol;
+                private ListaPrendas prendaColor;
 
-    public ListaPrendas getPrendasCol() {
-        return prendasCol;
+    public ListaPrendas getPrendaColor() {
+        return prendaColor;
     }
 
-    public void setPrendasCol(ListaPrendas prendasCol) {
-        this.prendasCol = prendasCol;
+    public void setPrendaColor(ListaPrendas prendaColor) {
+        this.prendaColor = prendaColor;
     }
+    
+    private PrendaJDBC prendaJDBC;
+
+
+    
 
 
     /**
@@ -28,8 +35,9 @@ public class PrendasColor extends javax.swing.JDialog {
     public PrendasColor(java.awt.Frame parent, boolean modal, String color) {
         super(parent, modal);
         
-        prendasCol = Boutique.misPrendas.prendasPorColor(color);
-        
+        //prendasCol = Boutique.misPrendas.prendasPorColor(color);
+        prendaJDBC=new PrendaJDBC();
+        prendaColor= prendaJDBC.prendaColor(color);
         
         
         initComponents();
@@ -51,32 +59,29 @@ public class PrendasColor extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${prendasCol.lista}");
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${prendaColor.lista}");
         org.jdesktop.swingbinding.JTableBinding jTableBinding = org.jdesktop.swingbinding.SwingBindings.createJTableBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jTable1);
         org.jdesktop.swingbinding.JTableBinding.ColumnBinding columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${codigo}"));
-        columnBinding.setColumnName("Código");
+        columnBinding.setColumnName("Codigo");
         columnBinding.setColumnClass(String.class);
-        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${descripcion}"));
-        columnBinding.setColumnName("Descripción");
+        columnBinding.setColumnName("Descripcion");
         columnBinding.setColumnClass(String.class);
-        columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${preciocoste}"));
-        columnBinding.setColumnName("Precio de coste");
-        columnBinding.setColumnClass(Double.class);
-        columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${precioventa}"));
-        columnBinding.setColumnName("Precio de venta");
-        columnBinding.setColumnClass(Double.class);
-        columnBinding.setEditable(false);
-        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stock}"));
-        columnBinding.setColumnName("Stock");
-        columnBinding.setColumnClass(Integer.class);
-        columnBinding.setEditable(false);
         columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${talla}"));
         columnBinding.setColumnName("Talla");
         columnBinding.setColumnClass(String.class);
-        columnBinding.setEditable(false);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${color}"));
+        columnBinding.setColumnName("Color");
+        columnBinding.setColumnClass(String.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${preciocoste}"));
+        columnBinding.setColumnName("Preciocoste");
+        columnBinding.setColumnClass(Double.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${precioventa}"));
+        columnBinding.setColumnName("Precioventa");
+        columnBinding.setColumnClass(Double.class);
+        columnBinding = jTableBinding.addColumnBinding(org.jdesktop.beansbinding.ELProperty.create("${stock}"));
+        columnBinding.setColumnName("Stock");
+        columnBinding.setColumnClass(Integer.class);
         bindingGroup.addBinding(jTableBinding);
         jTableBinding.bind();
         jScrollPane1.setViewportView(jTable1);

@@ -237,7 +237,7 @@ if (comprobarCampos()){
             JOptionPane.showMessageDialog(this, "No puede haber stock negativo", "Stock erroneo", JOptionPane.ERROR_MESSAGE);
         return false;
            }  
-           if (Boutique.misPrendas.existe(p)){
+           if (prendaJDBC.existePrenda(jTextField1.getText())){
             JOptionPane.showMessageDialog(this, "Ya existe una prenda con ese codigo", "Código Duplicado", JOptionPane.ERROR_MESSAGE);
         return false;
            } 

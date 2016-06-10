@@ -5,6 +5,7 @@
  */
 package boutique;
 
+import dao.PrendaJDBC;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JOptionPane;
@@ -14,27 +15,30 @@ import javax.swing.JOptionPane;
  * @author usu21
  */
 public class SeleccionarColor extends javax.swing.JDialog {
-    
-        private ArrayList<String> color;
 
-    public ArrayList<String> getColor() {
-        return color;
+    private ArrayList colores;
+
+    public ArrayList getColores() {
+        return colores;
     }
 
-    public void setColor(ArrayList<String> color) {
-        this.color = color;
+    public void setColores(ArrayList colores) {
+        this.colores = colores;
     }
 
+    private PrendaJDBC prendaJDBC;
 
     /**
      * Creates new form SeleccionarColor
      */
     public SeleccionarColor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        
-        color =Boutique.misPrendas.color();
-        color.add("-- Escoge un color --");
-        Collections.sort(color);
+
+        prendaJDBC = new PrendaJDBC();
+        colores = prendaJDBC.colorDisponible();
+        colores.add("-- Escoge un color --");
+        Collections.sort(colores);
+
         initComponents();
     }
 
@@ -63,7 +67,7 @@ public class SeleccionarColor extends javax.swing.JDialog {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${color}");
+        org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${colores}");
         org.jdesktop.swingbinding.JComboBoxBinding jComboBoxBinding = org.jdesktop.swingbinding.SwingBindings.createJComboBoxBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, eLProperty, jComboBox1);
         bindingGroup.addBinding(jComboBoxBinding);
 
@@ -106,21 +110,20 @@ public class SeleccionarColor extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String color = "";
         color = (String) jComboBox1.getSelectedItem();
-        if (color.isEmpty() || jComboBox1.getSelectedIndex() == 0){
+        if (color.isEmpty() || jComboBox1.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Debes escoger un color", "Color incorrecto", JOptionPane.ERROR_MESSAGE);
-        }else{
+        } else {
             PrendasColor pc = new PrendasColor(null, true, color);
             pc.setLocationRelativeTo(null);
             pc.setVisible(true);
             dispose();
-        
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
