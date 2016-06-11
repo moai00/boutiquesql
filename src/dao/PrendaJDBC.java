@@ -74,6 +74,28 @@ public class PrendaJDBC {
         return colores;
     }
     
+    public boolean actualizarPrenda(Prendas p) {
+        conectar();
+        if (conexion != null) {
+            try {
+                String query = "update prendas set stock = " + p.getStock() +
+                        " where codigo = '" + p.getCodigo() + "'";
+                Statement st = conexion.createStatement();
+                st.executeUpdate(query);
+                
+                st.close();
+                return true;
+            } catch (SQLException ex) {
+                System.out.println("Error al actualizar: " + ex.getMessage());
+                return false;
+            } finally {
+                desconectar();
+            }
+        } else {
+            return false;
+        }
+    }
+    
     public ListaPrendas prendaColor(String color){
         ListaPrendas listaPrendas = new ListaPrendas();
         conectar();
@@ -110,7 +132,7 @@ public class PrendaJDBC {
         conectar();
         if (conexion != null) {
             try {
-                String query = "select sum(precioventa) from prendas";
+                String query = "select sum(precioventa*stock) from prendas";
                 Statement st = conexion.createStatement();
                 ResultSet rs = st.executeQuery(query);
                 if (rs.next()){
@@ -221,9 +243,9 @@ public class PrendaJDBC {
 
     private void conectar() {
         try {
-            String url = "jdbc:mysql://localhost:3306/boutique";
+            String url = "jdbc:mysql://localhost:3306/prendas";
             String usr = "root";
-            String password = "jeveris";
+            String password = "111111";
             conexion = DriverManager.getConnection(url, usr, password);
 
         } catch (SQLException ex) {
