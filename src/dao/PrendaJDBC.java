@@ -171,6 +171,7 @@ public class PrendaJDBC {
                     prenda.setPrecioventa(rs.getDouble("precioventa"));
                     prenda.setStock(rs.getInt("stock"));
                     listaPrendas.altaPrenda(prenda);
+                    
 
                 }
                 rs.close();
@@ -243,9 +244,9 @@ public class PrendaJDBC {
 
     private void conectar() {
         try {
-            String url = "jdbc:mysql://localhost:3306/prendas";
+            String url = "jdbc:mysql://localhost:3306/boutique";
             String usr = "root";
-            String password = "111111";
+            String password = "jeveris";
             conexion = DriverManager.getConnection(url, usr, password);
 
         } catch (SQLException ex) {

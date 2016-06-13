@@ -26,12 +26,11 @@ public class AltaPrenda extends javax.swing.JFrame {
     public void setP(Prendas p) {
         this.p = p;
     }
-    
+
     private PrendaJDBC prendaJDBC;
 
     public AltaPrenda(java.awt.Frame parent, boolean modal) {
 
-       
         prendaJDBC = new PrendaJDBC();
         p = new Prendas();
         initComponents();
@@ -206,42 +205,43 @@ public class AltaPrenda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-if (comprobarCampos()){
-    if (prendaJDBC.insertarPrenda(p)){
-        JOptionPane.showMessageDialog(this, "Prenda dada de alta");
-    }else{
-        JOptionPane.showMessageDialog(this, "No se ha podido insertar la prenda", "ERROR: prenda no dada de alta", JOptionPane.ERROR_MESSAGE);
+        if (comprobarCampos()) {
+            if (prendaJDBC.insertarPrenda(p)) {
+                JOptionPane.showMessageDialog(this, "Prenda dada de alta");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se ha podido insertar la prenda", "ERROR: prenda no dada de alta", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+        dispose();
     }
-    
-}
-    }
-     
-    private boolean comprobarCampos(){
+
+    private boolean comprobarCampos() {
         if (p.getCodigo().isEmpty() || p.getDescripcion().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Hay campos en blanco", "Campos Vacíos", JOptionPane.ERROR_MESSAGE);
-        return false;
-        } 
-         if (p.getColor().isEmpty() || jComboBox1.getSelectedIndex() == 0) {
+            return false;
+        }
+        if (p.getColor().isEmpty() || jComboBox1.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Debes escoger un color", "Color vacío", JOptionPane.ERROR_MESSAGE);
-        return false;
-         } 
-          if (p.getTalla().isEmpty() || jComboBox2.getSelectedIndex() == 0) {
+            return false;
+        }
+        if (p.getTalla().isEmpty() || jComboBox2.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this, "Debes escoger una talla", "Talla vacía", JOptionPane.ERROR_MESSAGE);
-        return false;
-          } 
-           if (p.getPreciocoste() <= 0 || p.getPrecioventa() <= 0) {
+            return false;
+        }
+        if (p.getPreciocoste() <= 0 || p.getPrecioventa() <= 0) {
             JOptionPane.showMessageDialog(this, "Los precios no pueden ser menor o igual a 0", "Precios erroneos", JOptionPane.ERROR_MESSAGE);
-        return false;
-           }  
-           if (p.getStock() < 0) {
+            return false;
+        }
+        if (p.getStock() < 0) {
             JOptionPane.showMessageDialog(this, "No puede haber stock negativo", "Stock erroneo", JOptionPane.ERROR_MESSAGE);
-        return false;
-           }  
-           if (prendaJDBC.existePrenda(jTextField1.getText())){
+            return false;
+        }
+        if (prendaJDBC.existePrenda(jTextField1.getText())) {
             JOptionPane.showMessageDialog(this, "Ya existe una prenda con ese codigo", "Código Duplicado", JOptionPane.ERROR_MESSAGE);
-        return false;
-           } 
-           return true;
+            return false;
+        }
+        return true;
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
