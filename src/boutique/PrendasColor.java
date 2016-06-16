@@ -12,8 +12,8 @@ import dao.PrendaJDBC;
  * @author usu21
  */
 public class PrendasColor extends javax.swing.JDialog {
-    
-                private ListaPrendas prendaColor;
+
+    private ListaPrendas prendaColor;
 
     public ListaPrendas getPrendaColor() {
         return prendaColor;
@@ -22,24 +22,19 @@ public class PrendasColor extends javax.swing.JDialog {
     public void setPrendaColor(ListaPrendas prendaColor) {
         this.prendaColor = prendaColor;
     }
-    
+
     private PrendaJDBC prendaJDBC;
-
-
-    
-
 
     /**
      * Creates new form PrendasColor
      */
     public PrendasColor(java.awt.Frame parent, boolean modal, String color) {
         super(parent, modal);
-        
+
         //prendasCol = Boutique.misPrendas.prendasPorColor(color);
-        prendaJDBC=new PrendaJDBC();
-        prendaColor= prendaJDBC.prendaColor(color);
-        
-        
+        prendaJDBC = new PrendaJDBC();
+        prendaColor = prendaJDBC.prendaColor(color);
+
         initComponents();
         this.setTitle("Prendas de color " + color);
     }
@@ -130,7 +125,6 @@ public class PrendasColor extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
